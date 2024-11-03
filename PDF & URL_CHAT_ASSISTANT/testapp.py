@@ -110,8 +110,9 @@ if groq_api_key:
         qa_prompt = ChatPromptTemplate.from_messages([
             ("system", (
                 "You are an assistant answering questions strictly based on the provided PDFs or URL content. "
-                "If the answer is not found in these documents, respond with: "
-                "'This question is not available in the provided PDF or URL.'"
+                "If the answer is not found in these documents, you must respond with: "
+                "'This question is not available in the provided PDF or URL.' "
+                "Do not provide any information outside the uploaded documents."
             )),
             MessagesPlaceholder("chat_history"),
             ("human", "{input}"),
@@ -168,10 +169,10 @@ if groq_api_key:
                     )
                     latest_response = response['answer']
 
-                    # Check if the response is valid and relates to document context
+                    # Ensure response strictly adheres to document context
                     if latest_response.strip() == "" or "not available" in latest_response.lower():
                         latest_response = "This question is not available in the provided PDF or URL."
-                    elif "please provide more context" in latest_response.lower():
+                    elif "not found" in latest_response.lower():  # Check for specific phrases
                         latest_response = "This question is not available in the provided PDF or URL."
 
                     st.session_state.chat_history.append({"user": user_input, "assistant": latest_response})
