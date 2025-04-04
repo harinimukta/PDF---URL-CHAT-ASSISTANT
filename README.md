@@ -23,7 +23,7 @@ A Streamlit-based AI assistant that allows users to upload PDF documents or ente
 bash
 Copy
 Edit
-git clone https://github.com/your-username/pdf-url-chat-assistant.git
+git clone https://github.com/your-username/pdf-url-chat-assistant.git](https://github.com/harinimukta/PDF---URL-CHAT-ASSISTANT.git
 cd pdf-url-chat-assistant
 2. Set Up a Virtual Environment
 bash
@@ -47,6 +47,7 @@ HF_TOKEN=your_huggingface_token
 🔐 Both GROQ_API_KEY and HF_TOKEN are required for LLM and embeddings.
 
 🧠 How It Works
+PDF works using RAG concept
 PDF/URL Loader: Extracts text from uploaded PDFs or HTML content from given URLs.
 
 Text Splitter: Splits content into smaller chunks for better semantic search.
