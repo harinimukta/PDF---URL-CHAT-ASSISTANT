@@ -23,7 +23,7 @@ A Streamlit-based AI assistant that allows users to upload PDF documents or ente
 bash
 Copy
 Edit
-git clone https://github.com/your-username/pdf-url-chat-assistant.git](https://github.com/harinimukta/PDF---URL-CHAT-ASSISTANT.git
+git clone https://github.com/harinimukta/PDF---URL-CHAT-ASSISTANT.git
 cd pdf-url-chat-assistant
 2. Set Up a Virtual Environment
 bash
